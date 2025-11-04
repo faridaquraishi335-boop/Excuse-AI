@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html >
+< html lang="en">
+<head>
+<meta charest = "UTF-8" />
+<meta name ="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Excuse AI - $3to Skip Homework!</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cosmic+Neue:wght@700&display=swap');
+body {
+font-family: 'Cosmic Neue', Cursive;
+background : linear-gradient(135deg, #ff9a9e, #fad0c4);
+text-align : center;
+padding: 20px;
+margin:0;
+color:#333;
+}
+h1{ font-size: 2.5rem; margin:20px 0; color: #d32f2f; }
+input {
+padding: 16px;
+width : 80%;
+max-width: 400px;
+font-size: 18px;
+border: 3px solid #f44336;
+border-radius: 15px;
+margin: 10px;
+}
+button {
+padding : 16px 32px;
+font-size: 20px;
+background: #f44336;
+color: white;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+font-weight: bold;
+transition: 0.3s;
+}
+button:hover { background: #d32f2f; transform: scale(1.05); }
+#result {
+margin; 30px auto;
+padding: 20px;
+font-size: 1.5rem;
+background:white;
+border-radius: 15px;
+max-width: 600px;
+box-shadow:0 10px rgba(0,0,0,0,1);
+min-height:60px;
+}
+.locked { filter: blur(8px; user-select; none; }
+.footer { margin-top: 50px; font-siize: 0.9rem; color: #777; }
+</style>
+</head>
+<body>
+<h1> Excuse AI </h1>
+<p> Type your homework  Get a <strong> funny excuse </strong> to skip it!</p>
+<input id="hw" placeholder="e.g. I have algebra homework..." />
+<br/>
+<button onclick="generateExcuse()">Generate Excuse </button>
+<div id="result" class=locked"> Pay $3 to unlock your excuse!</div>
+<div class="footer"> Built by a 15-year-old coding king </div>
+<script>
+const excuses = [ " My dog ate my homework ... then asked for seconds.",
+" Aliens beamed my textbook into another galaxy.",
+I was bussy training my robot to do it.",
+" My grandma used my notes to wrap fish.",
+" Homework? I thought it was a suggestion!",
+"Left it in my time machine -set to 2099.",
+" The teacher siad 'no homework' in my dream.",
+" My cat claimed it as her new bed.",
+" I accidentally submitted it to NASA.",
+" My calculator joined a cult and left.",
+" Homework exploded during a science experiment.",
+" I tradded it for Bitcoin with a hacker.",
+" It got sucked into a black hole (my backpack).',
+"My AI tutor said it was 'too easy' and deleted iy.",
+" I used it to start a campfire  - survival skills!",
+" My little brother thought it was coloring paper.",
+"Homework? I'm on a digital detox.",
+" It was confiscated by the FBI (Future Billionaires Investigation).",
+" I fed it to my 3D printer - now it's cube.",
+" My excuse? I'm building an empire instead."
+];
+async function generateExcuse() {
+const hw = document.getElementById("hw").value.trim();
+if(!hw) return alert(Type your homework first!");
+const result = document.getEementById("result");
+result.classList.add("locked");
+result.innerHTML = "AI is thinking ...";
+const paid = confirm("Pay $3 to unlock your excuse?");
+if (!paid) {
+result .innerHTML = "No payment = No excuse!";
+return;
+}
+await new Promiser(r=> setTimeout(r, 1200));
+const excuse = excuses [ Math.floor(Math.random() *excuses length)];
+result.classList.remove("locked");
+result.innerHTML = `<strong> Excuse:</strong><br>"${excuse}"<br><br><em>Send this to your teacher!</em>`;
+}
+</script>
+</body>
+</html>
+ 
+ 
